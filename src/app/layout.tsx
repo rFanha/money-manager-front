@@ -1,8 +1,9 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import './globals.css';
+import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
+import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({weight: '300', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Money Mananger : Seu gerenciador Financeiro',
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(poppins.className, "bg-gray-100")}>{children}</body>
     </html>
   )
 }
